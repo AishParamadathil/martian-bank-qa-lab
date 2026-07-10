@@ -54,6 +54,10 @@ services:
       - "8000:8000"
     env_file:
       - ./customer-auth/.env
+    environment:
+      - MONGO_URI=mongodb://mongo-1:27017/martian_bank
+      - MONGODB_URI=mongodb://mongo-1:27017/martian_bank
+      - DATABASE_URL=mongodb://mongo-1:27017/martian_bank
     restart: always
     networks:
       - bankapp-network
